@@ -1,3 +1,5 @@
+from os import path
+
 from .common import (
     Iterator,
     Visit,
@@ -57,6 +59,7 @@ class Firefox(Browser):
                     "~/snap/firefox/common/.mozilla/firefox/",
                 ),
                 "darwin": "~/Library/Application Support/Firefox/Profiles/",
+                "win32": path.expandvars("%AppData%\\Mozilla\\Firefox\\Profiles\\"),
             },
             browser_name=cls.__name__,
         )
